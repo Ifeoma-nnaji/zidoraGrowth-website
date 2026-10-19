@@ -41,3 +41,9 @@ temp/
 
 # Coverage
 coverage/
+frontend/test-results/
+frontend/playwright-report/
+frontend/playwright/.cache/
+*.backup
+*.before-*
+*.pre-clean-redesign

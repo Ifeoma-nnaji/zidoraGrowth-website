@@ -25,7 +25,9 @@ const createMessage = async (data) => {
   });
 };
 
-
+/**
+ * Get all contact messages.
+ */
 const getMessages = async (options = {}) => {
   const where = {};
 

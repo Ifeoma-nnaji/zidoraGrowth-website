@@ -1,0 +1,81 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 0 24px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    transform var(--transition),
+    background-color var(--transition),
+    color var(--transition),
+    border-color var(--transition);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-dark {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn-dark:hover {
+  background: var(--color-charcoal);
+}
+
+.btn-outline {
+  border-color: var(--color-black);
+  background: transparent;
+  color: var(--color-black);
+}
+
+.btn-outline:hover {
+  background: var(--color-black);
+  color: var(--color-white);
+}
+
+.btn-light {
+  background: var(--color-white);
+  color: var(--color-black);
+}
+
+.btn-light:hover {
+  background: var(--color-gray-100);
+}
+
+.btn-teal-light {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.btn-teal-light:hover {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+@media (max-width: 600px) {
+  .btn {
+    min-height: 50px;
+    padding: 0 20px;
+    font-size: 0.8rem;
+  }
+}

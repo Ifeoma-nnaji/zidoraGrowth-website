@@ -1,0 +1,137 @@
+.cta {
+  position: relative;
+  overflow: hidden;
+
+  padding: 120px 0;
+
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.cta::before {
+  content: "";
+
+  position: absolute;
+  top: -180px;
+  right: -120px;
+
+  width: 420px;
+  height: 420px;
+
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 50%;
+}
+
+.cta::after {
+  content: "";
+
+  position: absolute;
+  bottom: -220px;
+  left: -140px;
+
+  width: 480px;
+  height: 480px;
+
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50%;
+}
+
+.cta__container {
+  position: relative;
+  z-index: 2;
+
+  display: flex;
+  justify-content: center;
+}
+
+.cta__content {
+  width: 100%;
+  max-width: 950px;
+
+  text-align: center;
+}
+
+.cta .section-label {
+  justify-content: center;
+
+  color: var(--color-white);
+}
+
+.cta .section-label::before {
+  background: var(--color-white);
+}
+
+.cta__title {
+  max-width: 900px;
+  margin: 0 auto;
+
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(3.2rem, 6vw, 6.2rem);
+  font-weight: 800;
+  line-height: 0.96;
+  letter-spacing: -0.065em;
+}
+
+.cta__description {
+  max-width: 620px;
+  margin: 28px auto 34px;
+
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.cta .btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 54px;
+  padding: 0 28px;
+
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+}
+
+.cta .btn-primary:hover {
+  background: var(--color-warm-white);
+  color: var(--color-primary-dark);
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .cta {
+    padding: 90px 0;
+  }
+
+  .cta__title {
+    font-size: clamp(2.7rem, 11vw, 4.5rem);
+  }
+
+  .cta__description {
+    font-size: 0.95rem;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .cta {
+    padding: 75px 0;
+  }
+
+  .cta__title {
+    font-size: clamp(2.5rem, 13vw, 4rem);
+  }
+
+  .cta__description {
+    margin-top: 22px;
+    font-size: 0.9rem;
+  }
+
+  .cta .btn-primary {
+    width: 100%;
+  }
+}

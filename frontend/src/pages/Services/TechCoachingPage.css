@@ -1,0 +1,584 @@
+/* ========================================
+   TECH COACHING PAGE
+======================================== */
+
+.tech-coaching-page {
+  overflow: hidden;
+  background: var(--color-warm-white);
+}
+
+.tech-coaching-page section {
+  position: relative;
+}
+
+.tech-coaching-page__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.tech-coaching-page__eyebrow::before {
+  width: 24px;
+  height: 2px;
+  flex-shrink: 0;
+  background: currentColor;
+  content: "";
+}
+
+.tech-coaching-hero {
+  padding: 88px 0 96px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(0, 127, 115, 0.09), transparent 30%),
+    var(--color-warm-white);
+}
+
+.tech-coaching-hero__container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+  align-items: center;
+  gap: clamp(40px, 7vw, 100px);
+}
+
+.tech-coaching-hero__content {
+  max-width: 650px;
+}
+
+.tech-coaching-hero__title {
+  max-width: 680px;
+  margin: 0;
+  color: var(--color-black);
+  font-size: clamp(2.8rem, 5.4vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.065em;
+  line-height: 1.04;
+  overflow-wrap: anywhere;
+}
+
+.tech-coaching-hero__title span,
+.tech-coaching-intro__title span,
+.tech-coaching-areas__title span,
+.tech-coaching-process__title span,
+.tech-coaching-cta h2 span {
+  display: block;
+  color: var(--color-primary);
+}
+
+.tech-coaching-hero__description {
+  max-width: 570px;
+  margin-top: 26px;
+  color: var(--color-gray-700);
+  font-size: 1.08rem;
+  line-height: 1.85;
+}
+
+.tech-coaching-page__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  min-height: 54px;
+  margin-top: 32px;
+  padding: 0 24px;
+  border: 1px solid var(--color-primary);
+  border-radius: 4px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: background var(--transition), transform var(--transition);
+}
+
+.tech-coaching-page__button:hover {
+  transform: translateY(-2px);
+  background: var(--color-primary-dark);
+}
+
+.tech-coaching-hero__visual {
+  position: relative;
+  display: flex;
+  min-height: 440px;
+  align-items: center;
+  justify-content: center;
+  padding: 34px;
+}
+
+.tech-coaching-hero__visual-main {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: 380px;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  padding: clamp(28px, 4vw, 52px);
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+  box-shadow: var(--shadow-lg);
+}
+
+.tech-coaching-hero__visual-main > span {
+  margin-bottom: 28px;
+  color: #b8e5de;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+.tech-coaching-hero__visual-main strong {
+  font-size: clamp(2.7rem, 5vw, 4.6rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.98;
+}
+
+.tech-coaching-hero__visual-line {
+  width: 72px;
+  height: 5px;
+  margin-top: 30px;
+  background: #b8e5de;
+}
+
+.tech-coaching-hero__card {
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  min-width: 132px;
+  flex-direction: column;
+  gap: 5px;
+  padding: 16px 20px;
+  border: 1px solid var(--color-gray-200);
+  background: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+.tech-coaching-hero__card span {
+  color: var(--color-gray-500);
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+}
+
+.tech-coaching-hero__card strong {
+  color: var(--color-black);
+  font-size: 1.2rem;
+}
+
+.tech-coaching-hero__card--top {
+  top: 16px;
+  right: 0;
+}
+
+.tech-coaching-hero__card--bottom {
+  bottom: 15px;
+  left: 0;
+}
+
+/* Introduction */
+
+.tech-coaching-intro {
+  padding: 92px 0;
+  background: var(--color-white);
+}
+
+.tech-coaching-intro__container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.85fr);
+  align-items: start;
+  gap: clamp(36px, 7vw, 100px);
+}
+
+.tech-coaching-intro__title,
+.tech-coaching-areas__title,
+.tech-coaching-process__title {
+  max-width: 680px;
+  font-size: clamp(2.15rem, 4vw, 3.6rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.1;
+}
+
+.tech-coaching-intro__text {
+  display: grid;
+  gap: 18px;
+  padding-top: 8px;
+}
+
+.tech-coaching-intro__text p,
+.tech-coaching-process__content > p:not(.tech-coaching-page__eyebrow) {
+  color: var(--color-gray-700);
+  font-size: 1rem;
+  line-height: 1.9;
+}
+
+/* Coaching service cards */
+
+.tech-coaching-areas {
+  padding: 96px 0 104px;
+  background: var(--color-warm-white);
+}
+
+.tech-coaching-areas__intro {
+  max-width: 780px;
+  margin-bottom: 44px;
+}
+
+.tech-coaching-areas__intro > p:not(.tech-coaching-page__eyebrow) {
+  max-width: 620px;
+  margin: 20px 0 0;
+  color: var(--color-gray-700);
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.tech-coaching-areas__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.tech-coaching-area {
+  display: flex;
+  min-height: 285px;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid var(--color-gray-200);
+  background: var(--color-white);
+  transition:
+    background var(--transition),
+    border-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.tech-coaching-area:hover,
+.tech-coaching-area:focus-within {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  background: var(--color-primary-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.tech-coaching-area__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.tech-coaching-area__top span:last-child {
+  font-size: 1.3rem;
+}
+
+.tech-coaching-area__content {
+  margin-top: 42px;
+}
+
+.tech-coaching-area__content h3 {
+  margin: 0;
+  color: var(--color-black);
+  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.25;
+}
+
+.tech-coaching-area__content p {
+  margin-top: 13px;
+  color: var(--color-gray-700);
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+
+.tech-coaching-area__content .tech-coaching-area__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 24px;
+  color: var(--color-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.tech-coaching-area__content .tech-coaching-area__link span {
+  display: inline-block;
+  font-size: 1.1rem;
+  transition: transform var(--transition-fast);
+}
+
+.tech-coaching-area__content .tech-coaching-area__link:hover span,
+.tech-coaching-area__content .tech-coaching-area__link:focus-visible span {
+  transform: translateX(4px);
+}
+
+.tech-coaching-area:hover .tech-coaching-area__top,
+.tech-coaching-area:hover .tech-coaching-area__content h3,
+.tech-coaching-area:hover .tech-coaching-area__content p,
+.tech-coaching-area:hover .tech-coaching-area__link,
+.tech-coaching-area:focus-within .tech-coaching-area__top,
+.tech-coaching-area:focus-within .tech-coaching-area__content h3,
+.tech-coaching-area:focus-within .tech-coaching-area__content p,
+.tech-coaching-area:focus-within .tech-coaching-area__link {
+  color: var(--color-white);
+}
+
+.tech-coaching-area:hover .tech-coaching-area__top,
+.tech-coaching-area:focus-within .tech-coaching-area__top {
+  color: #b8e5de;
+}
+
+.tech-coaching-area__link:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Learning process */
+
+.tech-coaching-process {
+  padding: 96px 0;
+  background: var(--color-white);
+}
+
+.tech-coaching-process__container {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(40px, 8vw, 110px);
+}
+
+.tech-coaching-process__content > p:not(.tech-coaching-page__eyebrow) {
+  margin-top: 22px;
+}
+
+.tech-coaching-process__steps {
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.tech-coaching-process__step {
+  display: grid;
+  grid-template-columns: 46px minmax(0, 1fr);
+  gap: 20px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--color-gray-200);
+}
+
+.tech-coaching-process__step > span {
+  padding-top: 3px;
+  color: var(--color-primary);
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.tech-coaching-process__step h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.tech-coaching-process__step p {
+  margin-top: 7px;
+  color: var(--color-gray-700);
+  font-size: 0.95rem;
+  line-height: 1.75;
+}
+
+/* Final call to action */
+
+.tech-coaching-cta {
+  padding: 90px 0;
+  background: var(--color-primary-dark);
+  color: var(--color-white);
+}
+
+.tech-coaching-cta__container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.tech-coaching-cta .tech-coaching-page__eyebrow {
+  color: #b8e5de;
+}
+
+.tech-coaching-cta h2 {
+  max-width: 850px;
+  font-size: clamp(2.3rem, 4.8vw, 4.2rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 1.08;
+}
+
+.tech-coaching-cta h2 span {
+  color: #b8e5de;
+}
+
+.tech-coaching-cta__container > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  min-height: 52px;
+  margin-top: 30px;
+  padding: 0 24px;
+  border: 1px solid var(--color-white);
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+  font-size: 0.9rem;
+  font-weight: 800;
+  transition:
+    background var(--transition),
+    color var(--transition),
+    transform var(--transition);
+}
+
+.tech-coaching-cta__container > a:hover {
+  transform: translateY(-2px);
+  background: transparent;
+  color: var(--color-white);
+}
+
+/* Tablet */
+
+@media (max-width: 900px) {
+  .tech-coaching-hero {
+    padding: 68px 0 76px;
+  }
+
+  .tech-coaching-hero__container {
+    grid-template-columns: minmax(0, 1fr) minmax(260px, 0.85fr);
+    gap: 28px;
+  }
+
+  .tech-coaching-hero__visual {
+    min-height: 370px;
+    padding: 24px;
+  }
+
+  .tech-coaching-hero__visual-main {
+    min-height: 320px;
+    padding: 28px;
+  }
+
+  .tech-coaching-intro,
+  .tech-coaching-areas,
+  .tech-coaching-process {
+    padding: 72px 0;
+  }
+
+  .tech-coaching-intro__container,
+  .tech-coaching-process__container {
+    gap: 36px;
+  }
+
+  .tech-coaching-area {
+    min-height: 300px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 680px) {
+  .tech-coaching-hero {
+    padding: 54px 0 64px;
+  }
+
+  .tech-coaching-hero__container,
+  .tech-coaching-intro__container,
+  .tech-coaching-process__container {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 36px;
+  }
+
+  .tech-coaching-hero__title {
+    font-size: clamp(2.55rem, 11vw, 4rem);
+  }
+
+  .tech-coaching-hero__description {
+    margin-top: 20px;
+    font-size: 1rem;
+  }
+
+  .tech-coaching-hero__visual {
+    min-height: 360px;
+    padding: 20px 14px;
+  }
+
+  .tech-coaching-hero__visual-main {
+    min-height: 320px;
+  }
+
+  .tech-coaching-hero__visual-main strong {
+    font-size: clamp(3rem, 13vw, 4.2rem);
+  }
+
+  .tech-coaching-hero__card--top {
+    right: 0;
+  }
+
+  .tech-coaching-hero__card--bottom {
+    left: 0;
+  }
+
+  .tech-coaching-intro,
+  .tech-coaching-areas,
+  .tech-coaching-process {
+    padding: 64px 0;
+  }
+
+  .tech-coaching-intro__title,
+  .tech-coaching-areas__title,
+  .tech-coaching-process__title {
+    font-size: clamp(2rem, 8.5vw, 3rem);
+  }
+
+  .tech-coaching-areas__intro {
+    margin-bottom: 30px;
+  }
+
+  .tech-coaching-areas__grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .tech-coaching-area {
+    min-height: 0;
+    padding: 26px;
+  }
+
+  .tech-coaching-area__content {
+    margin-top: 30px;
+  }
+
+  .tech-coaching-process__step {
+    grid-template-columns: 34px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .tech-coaching-cta {
+    padding: 66px 0;
+  }
+
+  .tech-coaching-cta h2 {
+    font-size: clamp(2.15rem, 9vw, 3.2rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tech-coaching-area,
+  .tech-coaching-page__button,
+  .tech-coaching-cta__container > a {
+    transition: none;
+  }
+}

@@ -1,0 +1,144 @@
+name: Zidora Growth CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  frontend-checks:
+    name: Frontend Lint and Build
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: frontend
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        run: npm ci
+
+      - name: Run ESLint
+        run: npm run lint
+
+      - name: Build frontend
+        run: npm run build
+
+  backend-tests:
+    name: Backend Tests
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: backend
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: backend/package-lock.json
+
+      - name: Install backend dependencies
+        run: npm ci
+
+      - name: Run backend tests
+        run: npm test
+
+  end-to-end:
+    name: Playwright Browser Tests
+    runs-on: ubuntu-latest
+    needs:
+      - frontend-checks
+      - backend-tests
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci
+
+      - name: Install Playwright Chromium
+        working-directory: frontend
+        run: npx playwright install --with-deps chromium
+
+      - name: Start backend health server
+        run: |
+          node -e '
+          const http = require("node:http");
+          const server = http.createServer((req, res) => {
+            res.setHeader("Content-Type", "application/json");
+            if (req.url === "/api/health") {
+              res.writeHead(200);
+              res.end(JSON.stringify({
+                success: true,
+                message: "Zidora Growth API is healthy"
+              }));
+              return;
+            }
+            res.writeHead(404);
+            res.end(JSON.stringify({
+              success: false,
+              message: "Route not found"
+            }));
+          });
+          server.listen(3000, "127.0.0.1");
+          ' > /tmp/zidora-test-api.log 2>&1 &
+          echo $! > /tmp/zidora-test-api.pid
+
+      - name: Wait for backend health server
+        run: |
+          for attempt in $(seq 1 30); do
+            if curl --fail --silent http://127.0.0.1:3000/api/health; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/zidora-test-api.log
+          exit 1
+
+      - name: Run Playwright tests
+        working-directory: frontend
+        env:
+          CI: true
+          API_BASE_URL: http://127.0.0.1:3000
+        run: npm run test:e2e
+
+      - name: Upload Playwright failure artifacts
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-test-results
+          path: frontend/test-results/
+          if-no-files-found: ignore
+          retention-days: 7

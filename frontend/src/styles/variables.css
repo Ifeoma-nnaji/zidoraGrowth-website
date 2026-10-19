@@ -1,0 +1,66 @@
+
+:root {
+  /* Brand colours */
+  --color-primary: #007F73;
+  --color-primary-dark: #005F56;
+  --color-primary-light: #B8E5DE;
+
+  /* Base colours */
+  --color-black: #111111;
+  --color-charcoal: #1A1A1A;
+  --color-white: #FFFFFF;
+  --color-warm-white: #FAF8F3;
+
+  /* Neutral colours */
+  --color-gray-100: #F1F3EF;
+  --color-gray-200: #E2E6E1;
+  --color-gray-500: #777777;
+  --color-gray-700: #3D3D3D;
+
+  /* Typography */
+  --font-heading: "Manrope", sans-serif;
+  --font-body: "DM Sans", sans-serif;
+
+  /* Layout */
+  --container-width: 1240px;
+  --navbar-height: 88px;
+
+  /* Spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+  --space-8: 64px;
+  --space-9: 80px;
+  --section-spacing: 100px;
+
+  /* Border radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-full: 999px;
+
+  /* Shadows */
+  --shadow-sm: 0 2px 8px rgba(17, 17, 17, 0.06);
+  --shadow-md: 0 8px 24px rgba(17, 17, 17, 0.08);
+  --shadow-lg: 0 16px 40px rgba(17, 17, 17, 0.12);
+
+  /* Transitions */
+  --transition: 0.3s ease;
+  --transition-fast: 0.15s ease;
+
+  /* Layering */
+  --z-header: 1000;
+  --z-floating-actions: 1100;
+  --z-modal: 1200;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --navbar-height: 72px;
+    --section-spacing: 72px;
+  }
+}

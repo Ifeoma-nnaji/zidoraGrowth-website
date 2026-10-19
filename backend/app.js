@@ -3,6 +3,7 @@
 const express = require("express");
 const cors = require("cors");
 
+const aiRoutes = require("./routes/aiRoutes");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
 const serviceRoutes = require("./routes/serviceRoutes");
@@ -51,6 +52,8 @@ app.get("/api/health", (req, res) => {
   });
 });
 
+
+app.use("/api/ai", aiRoutes);
 
 app.use("/api/auth", authRoutes);
 

@@ -1,0 +1,189 @@
+
+.growth-results {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  min-height: 510px;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 100px 24px;
+  background-color: var(--color-charcoal);
+  background-image: url("/images/zidora-hero-circle.png");
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--color-white);
+}
+
+.growth-results__overlay {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(12, 20, 19, 0.82) 0%,
+      rgba(12, 20, 19, 0.67) 50%,
+      rgba(12, 20, 19, 0.78) 100%
+    ),
+    linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    );
+}
+
+.growth-results__container {
+  width: min(100%, var(--container-width));
+  margin: 0 auto;
+}
+
+.growth-results__content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.growth-results__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 0 0 24px;
+  color: var(--color-primary-light);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+}
+
+.growth-results__eyebrow::before,
+.growth-results__eyebrow::after {
+  width: 22px;
+  height: 2px;
+  background: var(--color-primary-light);
+  content: "";
+}
+
+.growth-results__title {
+  max-width: 850px;
+  margin: 0 auto;
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-size: clamp(2.6rem, 5.2vw, 4.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.045em;
+  text-wrap: balance;
+}
+
+.growth-results__title span {
+  display: block;
+  margin-top: 5px;
+  color: var(--color-primary-light);
+}
+
+.growth-results__description {
+  max-width: 690px;
+  margin: 24px auto 30px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+
+.growth-results__button {
+  display: inline-flex;
+  min-height: 50px;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 14px 25px;
+  border: 2px solid var(--color-primary-light);
+  border-radius: 4px;
+  background: var(--color-primary);
+  color: var(--color-white);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.035em;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.growth-results__button span {
+  font-size: 1.2rem;
+  transition: transform 0.25s ease;
+}
+
+.growth-results__button:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-white);
+  background: var(--color-white);
+  color: var(--color-primary-dark);
+}
+
+.growth-results__button:hover span {
+  transform: translateX(4px);
+}
+
+/* TABLET */
+
+@media (max-width: 768px) {
+  .growth-results {
+    min-height: 460px;
+    padding: 85px 24px;
+    background-position: center;
+  }
+
+  .growth-results__title {
+    font-size: clamp(2.5rem, 7vw, 3.6rem);
+  }
+
+  .growth-results__description {
+    max-width: 580px;
+    font-size: 0.95rem;
+  }
+}
+
+/* MOBILE */
+
+@media (max-width: 480px) {
+  .growth-results {
+    min-height: 450px;
+    padding: 75px 20px;
+  }
+
+  .growth-results__eyebrow {
+    margin-bottom: 20px;
+    font-size: 0.68rem;
+  }
+
+  .growth-results__title {
+    font-size: clamp(2.15rem, 10vw, 2.9rem);
+    line-height: 1.12;
+  }
+
+  .growth-results__description {
+    margin: 20px auto 25px;
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  .growth-results__button {
+    width: 100%;
+    max-width: 290px;
+    padding: 14px 18px;
+    font-size: 0.78rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .growth-results__button,
+  .growth-results__button span {
+    transition: none;
+  }
+}

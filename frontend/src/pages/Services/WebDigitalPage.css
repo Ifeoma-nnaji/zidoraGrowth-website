@@ -1,0 +1,739 @@
+.web-digital-page {
+  background: #ffffff;
+  color: #10111b;
+}
+
+/* =========================================
+   SHARED
+========================================= */
+
+.web-digital-page .container {
+  width: min(1400px, 92%);
+  margin: 0 auto;
+}
+
+.web-digital-page__label {
+  margin: 0 0 18px;
+
+  color: #087f78;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.web-digital-page__button {
+  min-height: 52px;
+  padding: 0 24px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+
+  border: 1px solid #087f78;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.web-digital-page__button span {
+  font-size: 18px;
+  line-height: 1;
+}
+
+.web-digital-page__button--primary {
+  color: #ffffff;
+  background: #087f78;
+}
+
+.web-digital-page__button--primary:hover {
+  background: #066b65;
+  border-color: #066b65;
+  transform: translateY(-2px);
+}
+
+.web-digital-page__button--secondary {
+  color: #087f78;
+  background: #ffffff;
+}
+
+.web-digital-page__button--secondary:hover {
+  color: #ffffff;
+  background: #087f78;
+  transform: translateY(-2px);
+}
+
+/* =========================================
+   HERO
+========================================= */
+
+.web-digital-hero {
+  min-height: 680px;
+
+  display: flex;
+  align-items: center;
+
+  background:
+    radial-gradient(
+      circle at 82% 50%,
+      rgba(8, 127, 120, 0.08),
+      transparent 32%
+    ),
+    #ffffff;
+
+  overflow: hidden;
+}
+
+.web-digital-hero__container {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(430px, 0.8fr);
+  align-items: center;
+  gap: 70px;
+}
+
+.web-digital-hero__content {
+  max-width: 700px;
+}
+
+.web-digital-hero__label {
+  margin: 0 0 24px;
+
+  color: #087f78;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.web-digital-hero h1 {
+  margin: 0;
+
+  font-size: clamp(52px, 6vw, 86px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.055em;
+}
+
+.web-digital-hero h1 span {
+  color: #087f78;
+}
+
+.web-digital-hero__description {
+  max-width: 600px;
+
+  margin: 32px 0 0;
+
+  color: #626875;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
+.web-digital-hero__actions {
+  margin-top: 38px;
+
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* =========================================
+   HERO VISUAL
+========================================= */
+
+.web-digital-hero__visual {
+  min-height: 500px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+}
+
+.web-digital-hero__circle {
+  width: min(470px, 90%);
+  aspect-ratio: 1;
+
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(8, 127, 120, 0.28);
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(8, 127, 120, 0.16) 0%,
+      rgba(8, 127, 120, 0.06) 42%,
+      rgba(8, 127, 120, 0) 70%
+    );
+}
+
+.web-digital-hero__circle::before,
+.web-digital-hero__circle::after {
+  content: "";
+
+  position: absolute;
+
+  border: 1px solid rgba(8, 127, 120, 0.2);
+  border-radius: 50%;
+}
+
+.web-digital-hero__circle::before {
+  width: 76%;
+  height: 76%;
+}
+
+.web-digital-hero__circle::after {
+  width: 52%;
+  height: 52%;
+}
+
+/* =========================================
+   BROWSER ILLUSTRATION
+========================================= */
+
+.web-digital-hero__browser {
+  width: 62%;
+  aspect-ratio: 1.25;
+
+  position: relative;
+  z-index: 2;
+
+  overflow: hidden;
+
+  background: #ffffff;
+
+  border: 5px solid #10111b;
+  border-radius: 8px;
+
+  box-shadow:
+    0 30px 60px rgba(16, 17, 27, 0.16),
+    0 0 0 12px rgba(8, 127, 120, 0.08);
+
+  transform: perspective(700px) rotateY(-8deg) rotateX(4deg);
+}
+
+.web-digital-hero__browser-bar {
+  height: 18%;
+
+  padding: 0 9px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 5px;
+
+  background: #10111b;
+}
+
+.web-digital-hero__browser-bar span {
+  width: 6px;
+  height: 6px;
+
+  display: block;
+
+  border-radius: 50%;
+
+  background: #ffffff;
+
+  opacity: 0.7;
+}
+
+.web-digital-hero__browser-content {
+  height: 82%;
+
+  padding: 15px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 25% 1fr;
+
+  gap: 9px;
+
+  background: #f7f9f9;
+}
+
+.web-digital-hero__browser-content div {
+  border-radius: 3px;
+  background: #dcebea;
+}
+
+.web-digital-hero__browser-content div:first-child {
+  grid-column: 1 / -1;
+
+  background: #087f78;
+}
+
+.web-digital-hero__browser-content div:nth-child(2) {
+  background: #ffffff;
+  border: 1px solid #dfe4e4;
+}
+
+.web-digital-hero__browser-content div:nth-child(3) {
+  background: #ffffff;
+  border: 1px solid #dfe4e4;
+}
+
+/* =========================================
+   INTRO
+========================================= */
+
+.web-digital-intro {
+  padding: 115px 0;
+
+  background: #f7f9f9;
+}
+
+.web-digital-intro__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+  gap: 100px;
+}
+
+.web-digital-intro h2 {
+  max-width: 650px;
+
+  margin: 0;
+
+  font-size: clamp(38px, 4vw, 58px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.045em;
+}
+
+.web-digital-intro__grid > div:last-child {
+  padding-top: 35px;
+}
+
+.web-digital-intro__grid p:not(.web-digital-page__label) {
+  margin: 0 0 22px;
+
+  color: #626875;
+
+  font-size: 16px;
+  line-height: 1.85;
+}
+
+/* =========================================
+   SERVICES
+========================================= */
+
+.web-digital-services {
+  padding: 125px 0;
+}
+
+.web-digital-services__heading {
+  margin-bottom: 65px;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 0.55fr);
+  gap: 80px;
+  align-items: end;
+}
+
+.web-digital-services__heading h2 {
+  margin: 0;
+
+  font-size: clamp(42px, 4.5vw, 68px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.web-digital-services__heading h2 span {
+  color: #087f78;
+}
+
+.web-digital-services__heading > p {
+  margin: 0;
+
+  color: #626875;
+
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   SERVICE CARDS
+========================================= */
+
+.web-digital-services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  border-top: 1px solid #dfe4e4;
+}
+
+.web-digital-service-card {
+  min-height: 290px;
+
+  padding: 38px 40px;
+
+  display: grid;
+  grid-template-columns: 55px minmax(0, 1fr);
+  gap: 25px;
+
+  border-bottom: 1px solid #dfe4e4;
+
+  transition: background-color 0.25s ease;
+}
+
+.web-digital-service-card:nth-child(odd) {
+  border-right: 1px solid #dfe4e4;
+}
+
+.web-digital-service-card:hover {
+  background: #f7f9f9;
+}
+
+.web-digital-service-card__number {
+  color: #087f78;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.web-digital-service-card__content h3 {
+  margin: 0;
+
+  font-size: 25px;
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.web-digital-service-card__content p {
+  max-width: 520px;
+
+  margin: 18px 0 25px;
+
+  color: #68707c;
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.web-digital-service-card__content a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #10111b;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition: color 0.2s ease;
+}
+
+.web-digital-service-card__content a span {
+  color: #087f78;
+
+  font-size: 18px;
+
+  transition: transform 0.2s ease;
+}
+
+.web-digital-service-card__content a:hover {
+  color: #087f78;
+}
+
+.web-digital-service-card__content a:hover span {
+  transform: translateX(5px);
+}
+
+/* =========================================
+   APPROACH
+========================================= */
+
+.web-digital-approach {
+  padding: 120px 0;
+
+  background: #10111b;
+  color: #ffffff;
+}
+
+.web-digital-approach__heading {
+  margin-bottom: 70px;
+}
+
+.web-digital-approach__heading h2 {
+  margin: 0;
+
+  font-size: clamp(42px, 5vw, 70px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+}
+
+.web-digital-approach__heading h2 span {
+  color: #56b8b0;
+}
+
+.web-digital-approach__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.web-digital-approach__grid > div {
+  min-height: 250px;
+
+  padding: 0 32px;
+
+  border-left: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.web-digital-approach__grid > div:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.web-digital-approach__grid span {
+  color: #56b8b0;
+
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.web-digital-approach__grid h3 {
+  margin: 28px 0 15px;
+
+  font-size: 23px;
+  font-weight: 700;
+}
+
+.web-digital-approach__grid p {
+  margin: 0;
+
+  color: rgba(255, 255, 255, 0.65);
+
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.web-digital-cta {
+  padding: 100px 0;
+}
+
+.web-digital-cta__inner {
+  min-height: 300px;
+  padding: 55px 65px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+
+  background: #087f78;
+}
+
+.web-digital-cta__inner .web-digital-page__label {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.web-digital-cta__inner h2 {
+  max-width: 720px;
+
+  margin: 0;
+
+  color: #ffffff;
+
+  font-size: clamp(35px, 4vw, 55px);
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.web-digital-cta__inner
+  .web-digital-page__button--primary {
+  flex-shrink: 0;
+
+  color: #087f78;
+  background: #ffffff;
+  border-color: #ffffff;
+}
+
+.web-digital-cta__inner
+  .web-digital-page__button--primary:hover {
+  color: #ffffff;
+  background: transparent;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+  .web-digital-hero {
+    min-height: auto;
+    padding: 90px 0;
+  }
+
+  .web-digital-hero__container {
+    grid-template-columns: 1fr;
+    gap: 70px;
+  }
+
+  .web-digital-hero__content {
+    max-width: 760px;
+  }
+
+  .web-digital-hero__visual {
+    min-height: 430px;
+  }
+
+  .web-digital-intro__grid {
+    gap: 50px;
+  }
+
+  .web-digital-services__heading {
+    gap: 40px;
+  }
+
+  .web-digital-approach__grid {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 60px;
+  }
+
+  .web-digital-approach__grid > div:nth-child(3) {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .web-digital-cta__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .web-digital-page .container {
+    width: 90%;
+  }
+
+  .web-digital-hero {
+    padding: 70px 0;
+  }
+
+  .web-digital-hero h1 {
+    font-size: clamp(44px, 12vw, 62px);
+  }
+
+  .web-digital-hero__description {
+    font-size: 15px;
+  }
+
+  .web-digital-hero__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .web-digital-page__button {
+    width: 100%;
+  }
+
+  .web-digital-hero__visual {
+    min-height: 350px;
+  }
+
+  .web-digital-hero__circle {
+    width: min(360px, 90vw);
+  }
+
+  .web-digital-hero__browser {
+    width: 64%;
+  }
+
+  .web-digital-intro {
+    padding: 80px 0;
+  }
+
+  .web-digital-intro__grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .web-digital-intro__grid > div:last-child {
+    padding-top: 0;
+  }
+
+  .web-digital-services {
+    padding: 85px 0;
+  }
+
+  .web-digital-services__heading {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .web-digital-services__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .web-digital-service-card {
+    min-height: auto;
+
+    padding: 30px 0;
+
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 15px;
+
+    border-right: 0 !important;
+  }
+
+  .web-digital-approach {
+    padding: 85px 0;
+  }
+
+  .web-digital-approach__grid {
+    grid-template-columns: 1fr;
+    row-gap: 45px;
+  }
+
+  .web-digital-approach__grid > div {
+    min-height: auto;
+
+    padding: 0 0 0 25px !important;
+
+    border-left: 1px solid rgba(255, 255, 255, 0.15) !important;
+  }
+
+  .web-digital-cta {
+    padding: 70px 0;
+  }
+
+  .web-digital-cta__inner {
+    padding: 40px 28px;
+  }
+}

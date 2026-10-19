@@ -1,0 +1,509 @@
+.navbar {
+  width: 100%;
+
+  position: sticky;
+
+  z-index: 1000;
+
+  background: #ffffff;
+  border-bottom: 1px solid #eeeeee;
+
+  top: 0;
+}
+
+.navbar__container {
+  width: min(1400px, 92%);
+  min-height: 86px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+}
+
+/* =========================================
+   LOGO
+========================================= */
+
+.navbar__logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  color: #10111b;
+  text-decoration: none;
+
+  flex-shrink: 0;
+}
+
+.navbar__logo-mark {
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #087f78;
+}
+
+.navbar__logo-mark svg {
+  width: 100%;
+  height: 100%;
+}
+
+.navbar__brand {
+  display: flex;
+  flex-direction: column;
+
+  line-height: 1;
+}
+
+.navbar__brand strong {
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.navbar__brand small {
+  margin-top: 4px;
+
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 0.42em;
+
+  color: #087f78;
+}
+
+/* =========================================
+   MAIN NAVIGATION
+========================================= */
+
+.navbar__links {
+  height: 100%;
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  gap: 3px;
+}
+
+.navbar__item {
+  height: 86px;
+
+  display: flex;
+  align-items: center;
+
+  position: relative;
+}
+
+.navbar__item > a {
+  height: 100%;
+  padding: 0 15px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+
+  color: #242631;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+
+.navbar__item > a:hover {
+  color: #087f78;
+}
+
+/* =========================================
+   CHEVRON
+========================================= */
+
+.navbar__chevron {
+  display: inline-block;
+
+  margin-top: -3px;
+
+  color: #087f78;
+
+  font-size: 16px;
+  line-height: 1;
+
+  transition: transform 0.2s ease;
+}
+
+.navbar__item:hover .navbar__chevron {
+  transform: rotate(180deg);
+}
+
+/* =========================================
+   DROPDOWN
+========================================= */
+
+.navbar__dropdown {
+  min-width: 250px;
+
+  position: absolute;
+  top: calc(100% - 1px);
+  left: 50%;
+
+  padding: 12px 0;
+
+  background: #ffffff;
+
+  border: 1px solid #eeeeee;
+  border-top: 3px solid #087f78;
+
+  box-shadow: 0 18px 45px rgba(16, 17, 27, 0.12);
+
+  transform: translate(-50%, 12px);
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+/* Small dropdown pointer */
+
+.navbar__dropdown::before {
+  content: "";
+
+  width: 10px;
+  height: 10px;
+
+  position: absolute;
+  top: -7px;
+  left: 50%;
+
+  background: #087f78;
+
+  transform: translateX(-50%) rotate(45deg);
+}
+
+/* Show dropdown on hover */
+
+.navbar__item:hover .navbar__dropdown {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translate(-50%, 0);
+
+  pointer-events: auto;
+}
+
+/* Dropdown links */
+
+.navbar__dropdown a {
+  width: 100%;
+
+  padding: 12px 20px;
+
+  display: block;
+
+  color: #3f4652;
+  text-decoration: none;
+
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    padding-left 0.2s ease;
+}
+
+.navbar__dropdown a:hover {
+  color: #087f78;
+  background: #f4faf9;
+
+  padding-left: 25px;
+}
+
+/* =========================================
+   CTA
+========================================= */
+
+.navbar__cta {
+  margin-left: 20px;
+
+  min-width: 112px;
+  min-height: 46px;
+  padding: 0 20px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+  background: #087f78;
+
+  border: 1px solid #087f78;
+  border-radius: 3px;
+
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+.navbar__cta:hover {
+  background: #066b65;
+  border-color: #066b65;
+
+  transform: translateY(-1px);
+}
+
+/* =========================================
+   MOBILE BUTTON
+========================================= */
+
+.navbar__menu {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+
+  margin-left: 15px;
+
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+}
+
+.navbar__menu span {
+  width: 24px;
+  height: 2px;
+
+  display: block;
+
+  background: #10111b;
+
+  transition:
+    transform 0.25s ease,
+    opacity 0.25s ease;
+}
+
+.navbar__menu--open span:first-child {
+  transform: translateY(4.5px) rotate(45deg);
+}
+
+.navbar__menu--open span:last-child {
+  transform: translateY(-4.5px) rotate(-45deg);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1200px) {
+  .navbar__item > a {
+    padding: 0 10px;
+
+    font-size: 12px;
+  }
+
+  .navbar__cta {
+    margin-left: 10px;
+    min-width: 100px;
+  }
+
+  .navbar__brand strong {
+    font-size: 18px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 900px) {
+  .navbar__container {
+    min-height: 76px;
+  }
+
+  .navbar__links {
+    width: 100%;
+
+    position: absolute;
+    top: 76px;
+    left: 0;
+
+    margin: 0;
+
+    padding: 15px 5% 25px;
+
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    background: #ffffff;
+
+    border-top: 1px solid #eeeeee;
+    border-bottom: 1px solid #eeeeee;
+
+    box-shadow: 0 15px 30px rgba(16, 17, 27, 0.08);
+  }
+
+  .navbar__links--open {
+    display: flex;
+  }
+
+  .navbar__item {
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .navbar__item > a {
+    width: 100%;
+    min-height: 54px;
+
+    padding: 0;
+
+    justify-content: space-between;
+
+    font-size: 14px;
+  }
+
+  /*
+    On mobile, dropdowns stay visible inside
+    the expanded navigation rather than relying
+    on mouse hover.
+  */
+
+  .navbar__dropdown {
+    width: 100%;
+    min-width: 0;
+
+    position: static;
+
+    padding: 0;
+
+    border: 0;
+    border-top: 1px solid #eeeeee;
+
+    box-shadow: none;
+
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+
+    pointer-events: auto;
+  }
+
+  .navbar__dropdown::before {
+    display: none;
+  }
+
+  .navbar__dropdown a {
+    padding: 11px 15px 11px 20px;
+
+    font-size: 13px;
+  }
+
+  .navbar__dropdown a:hover {
+    padding-left: 25px;
+  }
+
+  .navbar__cta {
+    display: none;
+  }
+
+  .navbar__menu {
+    display: flex;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 520px) {
+  .navbar__container {
+    width: 90%;
+  }
+
+  .navbar__logo-mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .navbar__brand strong {
+    font-size: 17px;
+  }
+
+  .navbar__brand small {
+    font-size: 7px;
+  }
+}
+/* Direct navigation links, including Blog */
+.navbar__item--direct > a {
+  height: 100%;
+  padding: 0 15px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #242631;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.navbar__item--direct > a:hover {
+  color: #087f78;
+}
+
+@media (max-width: 1200px) {
+  .navbar__item--direct > a {
+    padding: 0 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 900px) {
+  .navbar__item--direct {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-bottom: 1px solid #eeeeee;
+  }
+
+  .navbar__item--direct > a {
+    width: 100%;
+    min-height: 54px;
+    padding: 0;
+    justify-content: space-between;
+    font-size: 14px;
+  }
+}
